@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,8 +59,12 @@ public class DefaultHttpRequestBuilder implements HttpRequestBuilder {
 
     String getUrl() { return url; }
     String getMethod() { return method; }
-    Map<String, String> getHeaders() { return headers; }
-    Map<String, String> getQueryParams() { return queryParams; }
+    Map<String, String> getHeaders() {
+        return Collections.unmodifiableMap(headers);
+    }
+    Map<String, String> getQueryParams() {
+        return Collections.unmodifiableMap(queryParams);
+    }
     String getBody() { return body; }
     int getTimeout() { return timeout; }
 }

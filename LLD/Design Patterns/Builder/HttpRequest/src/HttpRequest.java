@@ -1,4 +1,3 @@
-import java.util.Collections;
 import java.util.Map;
 
 public class HttpRequest {
@@ -13,8 +12,8 @@ public class HttpRequest {
     HttpRequest(DefaultHttpRequestBuilder builder) {
         this.url = builder.getUrl();
         this.method = builder.getMethod();
-        this.headers = Collections.unmodifiableMap(builder.getHeaders());
-        this.queryParams = Collections.unmodifiableMap(builder.getQueryParams());
+        this.headers = builder.getHeaders();
+        this.queryParams = builder.getQueryParams();
         this.body = builder.getBody();
         this.timeout = builder.getTimeout();
     }
