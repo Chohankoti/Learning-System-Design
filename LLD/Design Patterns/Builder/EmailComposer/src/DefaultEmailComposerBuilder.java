@@ -56,8 +56,6 @@ public class DefaultEmailComposerBuilder implements EmailComposerBuilder{
         }
     }
 
-
-
     String getTo(){
         return to;
     }
